@@ -27,3 +27,12 @@ To check if the installation was successful, follow these steps:
     python3 run.py test CheckerSuite
     python3 run.py test CodeGenSuite
     ```
+
+## 2. How to run and check
+> Because this is the hard-code template used in every exercise in my course, I won't make any edits because of its complexity. I will duplicate the `.g4` code file for each exercise along with 1 general README file for you to understand the questions and solutions.
+
+The source code of all exercises is in the folder: `src/main/bkool/parser/**/*.g4`.
+Follow these steps:
+1. Copy the content of the exercise files (`lexer/ex1.g4`,...) into the main code file `BKOOL.g4`.
+2. `cd src` and `python3 run.py gen`.
+3. Copy the 7 files generated in `target/main/bkool/parser` and paste into HCMUT's system.

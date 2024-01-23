@@ -1,4 +1,4 @@
-grammar BKOOL;
+grammar ex1;
 
 @lexer::header {
 from lexererr import *
@@ -14,7 +14,7 @@ options {
 
 program: EOF;
 
-IDENTIFIER: [a-z][a-z0-9]*;
+IDENTIFIER: [a-z][a-z][0-9]*;
 
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
