@@ -1,4 +1,4 @@
-grammar BKOOL;
+grammar ex7;
 
 @lexer::header {
 from lexererr import *

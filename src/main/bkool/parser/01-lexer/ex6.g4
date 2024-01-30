@@ -1,4 +1,4 @@
-grammar BKOOL;
+grammar ex6;
 
 @lexer::header {
 from lexererr import *
@@ -10,7 +10,7 @@ options {
 
 program: EOF;
 
-SHEXA: [1-9] [0-9a-fA-F]* [02468aAcCeE];
+PHPINT: '0' | [1-9] ('_'? [0-9])* {self.text = self.text.replace("_", "")};
 
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 

@@ -1,4 +1,4 @@
-grammar BKOOL;
+grammar ex5;
 
 @lexer::header {
 from lexererr import *
@@ -10,7 +10,9 @@ options {
 
 program: EOF;
 
-SHEXA: [1-9] [0-9a-fA-F]* [02468aAcCeE];
+IPV4: STR '.' STR '.' STR '.' STR;
+fragment STR: '0' | [1-9] DIGIT? DIGIT?;
+fragment DIGIT: [0-9];
 
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 

@@ -1,4 +1,4 @@
-grammar BKOOL;
+grammar ex4;
 
 @lexer::header {
 from lexererr import *
@@ -10,7 +10,10 @@ options {
 
 program: EOF;
 
-SHEXA: [1-9] [0-9a-fA-F]* [02468aAcCeE];
+BKID: NAME '.' NAME OPTION;
+fragment NAME: [a-z]+;
+fragment OPTION: CHAR? CHAR? CHAR? CHAR? [a-z0-9_];
+fragment CHAR: [a-z0-9._];
 
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 
