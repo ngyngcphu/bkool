@@ -12,9 +12,17 @@ options {
 // The single quote itself can appear as two single quotes back to back in a string: 'isn''t'.
 
 
-program: EOF;
+program:   (expr NEWLINE)* EOF;
+expr:   expr ('*'|'/') expr
+    |   expr ('+'|'-') expr
+    |   INT
+    |   '(' expr ')'
+    ;
+NEWLINE : [\r\n]+ ;
+INT     : [0-9]+ ;
 
-IDENTIFIER: [a-z][a-z0-9]*;
+STRINGLIT: '\'' (~['] | '\'\'')* '\'' {self.text = self.text[1:-1]};
+
 
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 

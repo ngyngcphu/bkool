@@ -33,6 +33,6 @@ To check if the installation was successful, follow these steps:
 
 The source code of all exercises is in: `src/main/bkool/parser/**/*.g4`.
 Follow these steps:
-1. Copy the content of the exercise files (`lexer/ex1.g4`,...) into the main code file `BKOOL.g4`.
+1. Copy the content of the exercise files (`01-lexer/ex1.g4`,...) into the main code file `BKOOL.g4`.
 2. `cd src` and `python3 run.py gen`.
 3. Copy the 7 files generated in `target/main/bkool/parser` and paste into HCMUT's system.
