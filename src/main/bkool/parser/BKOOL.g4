@@ -5,14 +5,26 @@ from lexererr import *
 }
 
 options {
-	language = Python3;
+	language=Python3;
 }
+// Use ANTLR to write regular expressions describing 
+// Pascal strings are made up of a sequence of characters between single quotes: 'string'. 
+// The single quote itself can appear as two single quotes back to back in a string: 'isn''t'.
 
-program: EOF;
 
-SHEXA: [1-9] [0-9a-fA-F]* [02468aAcCeE];
+program:   (expr NEWLINE)* EOF;
+expr:   expr ('*'|'/') expr
+    |   expr ('+'|'-') expr
+    |   INT
+    |   '(' expr ')'
+    ;
+NEWLINE : [\r\n]+ ;
+INT     : [0-9]+ ;
 
-WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
+STRINGLIT: '\'' (~['] | '\'\'')* '\'' {self.text = self.text[1:-1]};
+
+
+WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
 ERROR_CHAR: . {raise ErrorToken(self.text)};
 UNCLOSE_STRING: .;

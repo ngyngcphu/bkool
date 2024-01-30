@@ -7,7 +7,7 @@ Use ANTLR to write regular expressions describing a Pascal identifier that must 
 
 | Test  | Result    |
 |-------|-----------|
-| "abc" | abc,<EOF> |
+| "abc" | abc,\<EOF> |
 
 **Answer**:
 ```antlr
@@ -21,7 +21,7 @@ Use ANTLR to write regular expressions describing Pascal tokens For a number to 
 
 | Test  | Result    |
 |-------|-----------|
-| "1.0" | 1.0,<EOF> |
+| "1.0" | 1.0,\<EOF> |
 
 **Answer**:
 ```antlr
@@ -36,7 +36,7 @@ Use ANTLR to write regular expressions describing Pascal strings are made up of 
 
 | Test  | Result    |
 |-------|-----------|
-| "'Yanxi Palace - 2018'"| 'Yanxi Palace - 2018',<EOF> |
+| "'Yanxi Palace - 2018'"| 'Yanxi Palace - 2018',\<EOF> |
 
 **Answer**:
 ```antlr
@@ -56,7 +56,7 @@ Hãy sử dụng ANTLR để viết biểu thức chính quy cho **BKNetID** nó
 
 | Test  | Result    |
 |-------|-----------|
-| duy.tran2903 | duy.tran2903,<EOF> |
+| duy.tran2903 | duy.tran2903,\<EOF> |
 
 **Answer**:
 ```antlr
@@ -72,7 +72,7 @@ Use ANTLR to write regular expressions describing a valid IPv4 address. It consi
 **For example**:
 | Test  | Result    |
 |-------|-----------|
-| 192.168.0.1 | 192.168.0.1,<EOF> |
+| 192.168.0.1 | 192.168.0.1,\<EOF> |
 
 **Answer**:
 ```antlr
@@ -87,7 +87,7 @@ Use ANTLR to write regular expressions describing PHP's integers (in decimal) wh
 **For example**:
 | Test  | Result    |
 |-------|-----------|
-| 1_234_567 | 1234567,<EOF> |
+| 1_234_567 | 1234567,\<EOF> |
 
 **Answer**:
 ```antlr
@@ -108,7 +108,7 @@ Các chuỗi không hợp lệ với SHEXA: A12 (ký tự đầu tiên là chữ
 **For example**:
 | Test  | Result    |
 |-------|-----------|
-| 12 | 12,<EOF> |
+| 12    | 12,\<EOF>  |
 
 **Answer**:
 ```antlr
