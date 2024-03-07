@@ -1,0 +1,5 @@
+int a;
+int a,b;
+int a;float b;
+int a,b;float c;
+int a,b;float c,d,e;

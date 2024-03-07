@@ -1,3 +1,4 @@
 .antlr
 target
 __pycache__
+.vscode

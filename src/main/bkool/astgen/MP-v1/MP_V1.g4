@@ -1,4 +1,4 @@
-grammar BKOOL;
+grammar MP_V1;
 
 options {
 	language = Python3;

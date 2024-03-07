@@ -18,8 +18,21 @@ def main(argv):
     if len(argv) < 1:
         printUsage()
     elif argv[0] == 'gen':
-        subprocess.run(["java", "-jar", ANTLR_JAR, "-o", "../target",
-                       "-no-listener", "-visitor", "main/bkool/parser/BKOOL.g4"])
+        if argv[1] == 'bkool':
+            subprocess.run(["java", "-jar", ANTLR_JAR, "-o", "../target",
+                            "-no-listener", "-visitor", "main/bkool/parser/BKOOL.g4"])
+        elif argv[1] == 'mp-v1':
+            subprocess.run(["java", "-jar", ANTLR_JAR, "-o", "../target",
+                            "-no-listener", "-visitor", "main/bkool/astgen/MP-v1/MP_V1.g4"])
+        elif argv[1] == 'mp-v2':
+            subprocess.run(["java", "-jar", ANTLR_JAR, "-o", "../target",
+                            "-no-listener", "-visitor", "main/bkool/astgen/MP-v2/MP_V2.g4"])
+        elif argv[1] == 'mp-v3':
+            subprocess.run(["java", "-jar", ANTLR_JAR, "-o", "../target",
+                            "-no-listener", "-visitor", "main/bkool/astgen/MP-v3/MP_V3.g4"])
+        elif argv[1] == 'mp-v4':
+            subprocess.run(["java", "-jar", ANTLR_JAR, "-o", "../target",
+                            "-no-listener", "-visitor", "main/bkool/astgen/MP-v4/MP_V4.g4"])
 
     elif argv[0] == 'clean':
         shutil.rmtree(TARGET_DIR)
