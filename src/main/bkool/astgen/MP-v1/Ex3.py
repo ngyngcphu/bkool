@@ -95,9 +95,7 @@ class ASTGeneration(MP_V1Visitor):
 
     # vardecl: mptype ids ';';
     def visitVardecl(self,ctx:MP_V1Parser.VardeclContext): 
-        mptype = self.visit(ctx.mptype())
-        ids = self.visit(ctx.ids())
-        return [VarDecl(x, mptype) for x in ids]
+        return list(map(lambda x: VarDecl(x, self.visit(ctx.mptype())), self.visit(ctx.ids())))
 
     # mptype: INTTYPE | FLOATTYPE;
     def visitMptype(self,ctx:MP_V1Parser.MptypeContext):
