@@ -39,6 +39,41 @@ class Redeclared(StaticError):
         self.n = n
     def __str__(self):
         return  "Redeclared "+ str(self.k) + ": " + self.n
+    
+class RedeclaredDeclaration(StaticError):
+    """n: string: name of identifier """
+    def __init__(self,n):
+        self.n = n
+    def __str__(self):
+        return  "RedeclaredDeclaration "+ str(self.n)
+    
+class RedeclaredVariable(StaticError):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "RedeclaredVariable "+ str(self.name)
+    
+class RedeclaredConstant(StaticError):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "RedeclaredConstant "+ str(self.name)
+    
+class RedeclaredFunction(StaticError):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "RedeclaredFunction "+ str(self.name)
+    
+class UndeclaredIdentifier(Exception):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "UndeclaredIdentifier "+ str(self.name)
 
 class TypeMismatchInExpression(StaticError):
     """exp: AST.Expr"""
