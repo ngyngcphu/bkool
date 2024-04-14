@@ -68,12 +68,40 @@ class RedeclaredFunction(StaticError):
     def __str__(self):
         return  "RedeclaredFunction "+ str(self.name)
     
+class RedeclaredField(Exception):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "RedeclaredField "+ str(self.name)
+    
+class RedeclaredMethod(Exception):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "RedeclaredMethod "+ str(self.name)
+    
 class UndeclaredIdentifier(Exception):
     """name: string: name of identifier """
     def __init__(self,name):
         self.name = name
     def __str__(self):
         return  "UndeclaredIdentifier "+ str(self.name)
+    
+class UndeclaredField(Exception):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "UndeclaredField "+ str(self.name)
+    
+class UndeclaredClass(Exception):
+    """name: string: name of identifier """
+    def __init__(self,name):
+        self.name = name
+    def __str__(self):
+        return  "UndeclaredClass "+ str(self.name)
 
 class TypeMismatchInExpression(StaticError):
     """exp: AST.Expr"""
